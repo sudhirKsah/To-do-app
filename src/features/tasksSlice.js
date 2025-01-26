@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Helper function to save tasks to localStorage
+
 const saveToLocalStorage = (tasks) => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
 
-// Helper function to retrieve tasks from localStorage
+
 const loadFromLocalStorage = () => {
   const tasks = localStorage.getItem("tasks");
   return tasks ? JSON.parse(tasks) : [];
@@ -14,36 +14,36 @@ const loadFromLocalStorage = () => {
 const tasksSlice = createSlice({
   name: "tasks",
   initialState: {
-    list: loadFromLocalStorage(), // Load tasks from localStorage on initial load
-    filteredTasks: loadFromLocalStorage(), // Also load filtered tasks from localStorage
+    list: loadFromLocalStorage(), 
+    filteredTasks: loadFromLocalStorage(), 
   },
   reducers: {
     addTask: (state, action) => {
       state.list.push(action.payload);
-      state.filteredTasks = state.list; // Update filteredTasks
-      saveToLocalStorage(state.list); // Save tasks to localStorage
+      state.filteredTasks = state.list; 
+      saveToLocalStorage(state.list); 
     },
     deleteTask: (state, action) => {
       state.list = state.list.filter((task) => task.id !== action.payload);
-      state.filteredTasks = state.list; // Update filteredTasks
-      saveToLocalStorage(state.list); // Save tasks to localStorage
+      state.filteredTasks = state.list; 
+      saveToLocalStorage(state.list); 
     },
     toggleComplete: (state, action) => {
       const task = state.list.find((task) => task.id === action.payload);
       if (task) {
         task.completed = !task.completed;
       }
-      state.filteredTasks = state.list; // Update filteredTasks
-      saveToLocalStorage(state.list); // Save tasks to localStorage
+      state.filteredTasks = state.list; 
+      saveToLocalStorage(state.list); 
     },
     setPriority: (state, action) => {
       const { id, priority } = action.payload;
       const task = state.list.find((task) => task.id === id);
       if (task) {
-        task.priority = task.priority === priority ? "low" : priority; // Toggle priority
+        task.priority = task.priority === priority ? "low" : priority;
       }
-      state.filteredTasks = state.list; // Update filteredTasks
-      saveToLocalStorage(state.list); // Save tasks to localStorage
+      state.filteredTasks = state.list;
+      saveToLocalStorage(state.list); 
     },
     filterTasks: (state, action) => {
       if (action.payload === "ALL") {
