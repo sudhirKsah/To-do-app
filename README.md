@@ -63,8 +63,11 @@ Check out the live demo: [To-Do App Demo](https://do-it-orcin.vercel.app/)
     npm run dev
     ```
 4. **Open your browser and navigate to ```http://localhost:5173```**.
-5. **Setup ```.env``` file in the root (optional)**
-    ```VITE_WEATHER_API_KEY=your_api_key```
+5. **Setup ```.env``` file in the root (optional)**:
+    ```bash
+    VITE_WEATHER_API_KEY=your_api_key
+    ```
+    This is optional step only to fetch weather data based on user location
 
 ## Application Structure
 - App.jsx: Main application component that manages authentication and routing.
