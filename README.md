@@ -8,7 +8,7 @@ This To-Do application enhances the classic functionality with API integration, 
 - **Add Task:** Input tasks and add them to the list.
 - **View Tasks:** Display all tasks in a list with filters for all tasks or only important ones.
 - **Delete Task:** Remove tasks from the list.
-- **Task Prioritization:** Assign priorities (Low, Medium, High) to tasks with visual cues.
+- **Task Prioritization:** Assign priorities (Low, High) to tasks with visual cues.
 - **Weather Integration:** Fetch weather data using a public API (e.g., OpenWeatherMap) for outdoor-related tasks.
 - **Persistent Storage:** Tasks and authentication status are stored in `localStorage` for persistence across sessions.
 
