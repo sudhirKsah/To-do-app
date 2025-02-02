@@ -51,7 +51,7 @@ Check out the live demo: [To-Do App Demo](https://do-it-orcin.vercel.app/)
 ### Steps
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/sudhirKsah/To-do-app
+   git clone https://github.com/sudhirKsah/To-do-app.git
    cd To-do-app
    ```
 2. **Install Dependencies**:
